@@ -35,7 +35,11 @@
 
 <div id="main_content">
   <div id="header">
-    <p><%= link_to 'All Posts', root_path %></p>
+    <% if current_page?(root_path) %>
+      <p><%= link_to 'All Posts', root_path %></p>
+    <% else %>
+      <p><%= link_to 'Back to All Post', root_path %></p>
+    <% end %>
     <div class="buttons">
       <button class="button"><%= link_to 'New Post', new_post_path %></button>
       <button class="button">Log Out</button>
